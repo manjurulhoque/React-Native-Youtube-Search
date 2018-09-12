@@ -9,6 +9,7 @@ import searchYouTube  from 'youtube-api-search';
 import AppHeader from './src/components/AppHeader';
 import SearchBar from './src/components/SearchBar';
 import { API_KEY }  from './keys';
+import VideoList from './src/components/VideoList';
 
 export default class App extends Component {
 
@@ -25,10 +26,12 @@ export default class App extends Component {
     }
 
     render() {
+        const {loading, videos} = this.state;
         return (
             <View style={styles.container}>
                 <AppHeader/>
-                <SearchBar loading={this.state.loading} onPressSearch={this.onPressSearch}/>
+                <SearchBar loading={loading} onPressSearch={this.onPressSearch}/>
+                <VideoList videos={videos}/>
             </View>
         );
     }
