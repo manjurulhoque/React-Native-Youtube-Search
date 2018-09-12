@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Card } from 'react-native-elements';
+import WatchButton from './WatchButton';
 
 const VideoListItem = ({ video }) => {
     const {
@@ -38,6 +39,8 @@ const VideoListItem = ({ video }) => {
                 <Text style={descriptionStyle}>
                     {description}
                 </Text>
+
+                <WatchButton videoId={video.id.videoId} />
                 </View>
             </Card>
         </View>
